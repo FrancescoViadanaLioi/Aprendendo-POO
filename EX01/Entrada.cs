@@ -18,12 +18,19 @@ namespace Entrada
                 t.B = LerEntrada("B");
                 t.C = LerEntrada("C");
 
-                if (t.EhValido()) return t;
+                if (t.EhValido())
+                {
 
-                else Limpar.LimparTela("Os valores inseridos não respeitam as leis de formação do triângulo.");
+                    return t;
+                }
+
+                else
+                {
+                    Limpar.LimparTela("Os valores inseridos não respeitam as leis de formação do triângulo.");
+                }
             }
         }
-        
+
         private static double LerEntrada(string nomeLado)
         {
             double valor;
