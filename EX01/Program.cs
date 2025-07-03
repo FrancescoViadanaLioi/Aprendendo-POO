@@ -8,14 +8,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Dados do triângulo X: ");
-        var trianguloX = InserirDados.LadosTriangulo();
+        var trianguloX = InserirDados.LadosTriangulo("X");
         Exibir.InfoTriangulo(trianguloX);
 
         Continuidade.PausarEProsseguir("Prosseguir com a exibição do outro triângulo");
 
-        Console.WriteLine("Dados do triângulo Y: ");
-        var trianguloY = InserirDados.LadosTriangulo();
+        var trianguloY = InserirDados.LadosTriangulo("Y");
         Exibir.InfoTriangulo(trianguloY);
         Continuidade.PausarEProsseguir("Encerrar o programa");
     }
