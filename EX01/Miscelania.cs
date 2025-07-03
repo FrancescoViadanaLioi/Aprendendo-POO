@@ -2,11 +2,11 @@
 
 namespace Miscelania
 {
-    public class Limpar
+    public static class Limpar
     {
-        public static void LimparTela()
+        public static void LimparTela(string msgErro)
         {
-            Console.WriteLine("Entrada inválida, tente de novo.");
+            Console.WriteLine($"{msgErro}");
             Console.WriteLine("(Pressione qualquer tecla para continuar)");
             Console.ReadKey();
             Console.Clear();
