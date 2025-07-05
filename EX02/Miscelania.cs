@@ -14,9 +14,9 @@ namespace Miscelania
     }
     public static class Continuar
     {
-        public static void TeclarEContinuar()
+        public static void TeclarEContinuar(string msg)
         {
-            Console.WriteLine("(Pressione qualquer tecla para continuar)");
+            Console.WriteLine(msg);
             Console.ReadKey();
         }
     }
