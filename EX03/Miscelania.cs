@@ -12,4 +12,13 @@ namespace Miscelania
             Console.Clear();
         }
     }
+    public static class Pausa
+    {
+        public static void Continuar(string msgMis)
+        {
+            Console.WriteLine(msgMis);
+            Console.WriteLine("(Pressione qualquer tecla para continuar)");
+            Console.ReadKey();
+        }
+    }
 }
