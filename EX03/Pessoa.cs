@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pessoa
+namespace Pessoas
 {
     public class Pessoa
     {

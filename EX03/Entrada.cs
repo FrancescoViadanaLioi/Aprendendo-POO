@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using Pessoa;
+using Pessoas;
 using Miscelania;
 using System.Diagnostics;
 
