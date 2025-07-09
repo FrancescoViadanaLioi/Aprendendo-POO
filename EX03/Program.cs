@@ -21,7 +21,7 @@ class Program
 
         if (resultado != null)
         {
-            Console.WriteLine($"A pessoa mais alta é {resultado.Nome!.ToString(CultureInfo.InvariantCulture)}, com {resultado.Altura.ToString(CultureInfo.InvariantCulture)}m de altura.");
+            Console.WriteLine($"A pessoa mais alta é {resultado.Nome!}, com {resultado.Altura.ToString(CultureInfo.InvariantCulture)}m de altura.");
         }
         else
         {
