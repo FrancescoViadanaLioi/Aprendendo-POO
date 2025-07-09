@@ -12,6 +12,7 @@ namespace Saida
             ExibirLado("B", t.B);
             ExibirLado("C", t.C);
             Console.WriteLine($"Perímetro: {t.CalcularPerimetro().ToString(CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Área: {t.CalcularArea().ToString("F2", CultureInfo.InvariantCulture)}");
         }
         private static void ExibirLado(string nome, double valor)
         {

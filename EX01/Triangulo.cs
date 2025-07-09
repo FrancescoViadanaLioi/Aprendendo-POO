@@ -18,5 +18,10 @@ namespace Triangulo
         {
             return A + B + C;
         }
+        public double CalcularArea()
+        {
+            double p = (A + B + C) / 2;
+            return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+        }
     }
 }
