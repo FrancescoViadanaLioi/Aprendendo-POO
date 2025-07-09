@@ -23,7 +23,7 @@ class Program
         {
             Console.WriteLine($"A pessoa mais alta é {resultado.Nome!.ToString(CultureInfo.InvariantCulture)}, com {resultado.Altura.ToString(CultureInfo.InvariantCulture)}m de altura.");
         }
-        if (resultado == null)
+        else
         {
             Console.WriteLine("As alturas empatam.");
         }
