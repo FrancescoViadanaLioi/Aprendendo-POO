@@ -9,7 +9,7 @@ namespace Entrada
 {
     public static class PessoaInput
     {
-        public static string InserirNome(string numPessoa)
+        public static string? InserirNome(string numPessoa)
         {
             while (true)
             {
