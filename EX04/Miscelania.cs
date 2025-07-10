@@ -2,6 +2,24 @@
 
 namespace Miscelania
 {
+    public class MainMenu
+    {
+        public static void ExibirMenu()
+        {
+            ExibirTracinhos();
+            Console.Write("MENU PRINCIPAL");
+            ExibirTracinhos();
+        }
+
+        private static void ExibirTracinhos()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("-");
+            }
+        }
+    }
+
     public static class ConsoleUI
     {
         public static void ExibirErroLimpar(string msgErro)
