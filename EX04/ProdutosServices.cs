@@ -1,12 +1,13 @@
 ﻿using System;
+using Validacoes;
 
 namespace ProdutosServices
 {
     public class CalculosComProdutos
     {
-        public static double CalcularValorTotalEstocado(Produto.Produto preco, Produto.Produto unidades)
+        public static double CalcularValorTotalEstocado(double preco, int qntd)
         {
-            return preco.Preco * unidades.Qntd;
+            return preco * qntd;
         }
     }
 }

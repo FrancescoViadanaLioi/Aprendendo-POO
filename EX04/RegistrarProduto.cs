@@ -4,32 +4,33 @@ using System.Globalization;
 using Produto;
 using Validacoes;
 using Miscelania;
+using System.Runtime.CompilerServices;
 
 namespace RegistrarProduto
 {
     public class RegistarProduto
     {
-        public string? RegistrarNome()
+        public static string? RegistrarNome()
         {
             while (true)
             {
                 string? input = ExibirRequisicao("Digite o nome do produto: ");
                 bool ehValido = Validations.NomeEhValido(input);
-                if (ehValido) return input?.Trim();
+                if (ehValido) return input!.Trim();
                 ConsoleUI.ExibirErroLimpar("ERRO! Verifique se não há espaços em branco desnecessários e nenhum número.");
             }
         }
-        public double RegistrarPreco()
+        public static double RegistrarPreco()
         {
             while (true)
             {
                 string? input = ExibirRequisicao("Digite o preço do produto: ");
                 bool ehValido = Validations.PrecoEhValido(input);
-                if (ehValido) return double.Parse(input!, CultureInfo.InvariantCulture);
+                if (ehValido) return double.Parse(input!);
                 ConsoleUI.ExibirErroLimpar("ERRO! Verifique se você digitou somente um número positivo, sem letras ou símbolos.");
             }
         }
-        public int RegistrarQuantidadeInicial()
+        public static int RegistrarQuantidadeInicial()
         {
             while (true)
             {

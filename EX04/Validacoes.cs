@@ -16,7 +16,7 @@ namespace Validacoes
         }
         public static bool QntdEhValida(string? input)
         {
-            return int.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out int qntd) && qntd >= 0;
+            return int.TryParse(input, out int qntd) && qntd >= 0;
         }
     }
 }
