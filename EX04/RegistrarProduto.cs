@@ -29,6 +29,16 @@ namespace RegistrarProduto
                 ConsoleUI.ExibirErroLimpar("ERRO! Verifique se você digitou somente um número positivo, sem letras ou símbolos.");
             }
         }
+        public int RegistrarQuantidadeInicial()
+        {
+            while (true)
+            {
+                string? input = ExibirRequisicao("Digite a quantidade inicial do produto em estoque: ");
+                bool ehValido = Validations.QntdEhValida(input);
+                if (ehValido) return int.Parse(input!);
+                ConsoleUI.ExibirErroLimpar("ERRO! Verifique se foi digitando somente um número inteiro positivo.");
+            }
+        }
         private static string? ExibirRequisicao(string msg)
         {
             Console.Write(msg);
