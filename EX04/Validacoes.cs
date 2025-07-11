@@ -14,5 +14,9 @@ namespace Validacoes
         {
             return double.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out double preco) && preco >= 0;
         }
+        public static bool QntdEhValida(string? input)
+        {
+            return int.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out int qntd) && qntd >= 0;
+        }
     }
 }
