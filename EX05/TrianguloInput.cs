@@ -5,9 +5,9 @@ using Miscelania;
 
 namespace TrianguloInput
 {
-    public class LadosTriangulo
+    public static class LadosTriangulo
     {
-        public double LerLado(string lado)
+        public static double LerLado(string lado)
         {
             while (true)
             {
@@ -22,7 +22,7 @@ namespace TrianguloInput
                 ConsoleUI.ExibirErroELimpar("ERRO! Verifique se o valor é um número real positivo.");
             }
         }
-        private string? ExibirRequisicao(string msg)
+        private static string? ExibirRequisicao(string msg)
         {
             Console.Write(msg);
             return Console.ReadLine();
