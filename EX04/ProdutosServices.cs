@@ -13,19 +13,25 @@ namespace ProdutosServices
     }
     public class AjusteDeEstoque
     {
-        public static int AumentarEstoque(int qntd, int valor)
+        public static int AumentarEstoque(int qntd)
         {
             while (true)
             {
                 string? input = ExibirRequisicao("Quantas unidades foram adicionadas ao estoque?");
                 bool result = Validations.QntdEhValida(input);
-                if (result) return qntd + valor;
+                if (result) return qntd + int.Parse(input!);
                 ConsoleUI.ExibirErroLimpar("ERRO! somente números inteiros positivos são válidos.");
             }
         }
-        public static int ReduzirEstoque(int qntd, int valor)
+        public static int ReduzirEstoque(int qntd)
         {
-            return qntd - valor;
+            while (true)
+            {
+                string? input = ExibirRequisicao("Quantas unidades foram removidas do estoque? ");
+                bool result = Validations.QntdEhValida(input);
+                if (result) return qntd + int.Parse(input!);
+                ConsoleUI.ExibirErroLimpar("ERRO! somente números inteiros positivos são válidos.");
+            }
         }
         private static string? ExibirRequisicao(string msg)
         {
