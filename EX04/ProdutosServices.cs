@@ -1,5 +1,6 @@
 ﻿using System;
 using Validacoes;
+using Miscelania;
 
 namespace ProdutosServices
 {
@@ -14,11 +15,22 @@ namespace ProdutosServices
     {
         public static int AumentarEstoque(int qntd, int valor)
         {
-            return qntd + valor;
+            while (true)
+            {
+                string? input = ExibirRequisicao("Quantas unidades foram adicionadas ao estoque?");
+                bool result = Validations.QntdEhValida(input);
+                if (result) return qntd + valor;
+                ConsoleUI.ExibirErroLimpar("ERRO! somente números inteiros positivos são válidos.");
+            }
         }
         public static int ReduzirEstoque(int qntd, int valor)
         {
             return qntd - valor;
+        }
+        private static string? ExibirRequisicao(string msg)
+        {
+            Console.Write(msg);
+            return Console.ReadLine();
         }
     }
 }
