@@ -10,4 +10,15 @@ namespace ProdutosServices
             return preco * qntd;
         }
     }
+    public class AjusteDeEstoque
+    {
+        public static int AumentarEstoque(int qntd, int valor)
+        {
+            return qntd + valor;
+        }
+        public static int ReduzirEstoque(int qntd, int valor)
+        {
+            return qntd - valor;
+        }
+    }
 }
