@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace RegistrarProduto
 {
-    public class RegistarProduto
+    public class RegistrarProduto
     {
         public static string? RegistrarNome()
         {

@@ -11,9 +11,9 @@ class Program
     static void Main(string[] args)
     {
         var produto = new Produto.Produto();
-        produto.Nome = RegistarProduto.RegistrarNome();
-        produto.Preco = RegistarProduto.RegistrarPreco();
-        produto.Qntd = RegistarProduto.RegistrarQuantidadeInicial();
+        produto.Nome = RegistrarProduto.RegistrarProduto.RegistrarNome();
+        produto.Preco = RegistrarProduto.RegistrarProduto.RegistrarPreco();
+        produto.Qntd = RegistrarProduto.RegistrarProduto.RegistrarQuantidadeInicial();
         double valorTotal = CalculosComProdutos.CalcularValorTotalEstocado(produto.Preco, produto.Qntd);
 
         Console.WriteLine($"O produto {produto.Nome}, custa R${produto.Preco.ToString("F2", CultureInfo.InvariantCulture)}, há {produto.Qntd} unidades, totalizando em valor: R${valorTotal.ToString("F2", CultureInfo.InvariantCulture)}");
