@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Miscelania
         {
             Console.WriteLine("(Pressione qualquer tecla para continuar)");
             Console.ReadKey();
+        }
+    }
+    public static class Formatador
+    {
+        public static string FormatarDuasCasas(double numero)
+        {
+            return numero.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
