@@ -15,9 +15,9 @@ namespace Validacoes
         {
             return double.TryParse(input, CultureInfo.InvariantCulture, out salario) && salario >= 1500;
         }
-        public static bool ImpostoEhValido(string? input)
+        public static bool ImpostoEhValido(string? input, out double imposto)
         {
-            return double.TryParse(input, CultureInfo.InvariantCulture, out double imposto) && imposto >= 0;
+            return double.TryParse(input, CultureInfo.InvariantCulture, out imposto) && imposto >= 0;
         }
     }
 }
