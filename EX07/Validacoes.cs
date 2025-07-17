@@ -25,5 +25,9 @@ namespace Validacoes
         {
             return double.TryParse(input, CultureInfo.InvariantCulture, out imposto) && imposto >= 0;
         }
+        public static bool PorcentagemEhValida(string? input, out int porcentagem)
+        {
+            return int.TryParse(input, out porcentagem);
+        }
     }
 }
