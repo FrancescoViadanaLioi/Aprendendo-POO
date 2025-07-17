@@ -6,10 +6,16 @@ namespace Validacoes
 {
     public static class Validations
     {
-        public static bool NomeEhValido(string? nome)
+        public static bool NomeEhValido(string? input, out string? nome)
         {
-            if (string.IsNullOrWhiteSpace(nome)) return false;
-            return Regex.IsMatch(nome, @"^[A-Za-zÀ-ÿ\s]+$");
+            nome = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(input) && Regex.IsMatch(input, @"^[A-Za-zÀ-ÿ\s]+$"))
+            {
+                nome = input;
+                return true;
+            }
+            return false;
         }
         public static bool SalarioEhValido(string? input, out double salario)
         {
