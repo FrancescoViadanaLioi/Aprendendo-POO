@@ -11,9 +11,9 @@ namespace Validacoes
             if (string.IsNullOrWhiteSpace(nome)) return false;
             return Regex.IsMatch(nome, @"^[A-Za-zÀ-ÿ\s]+$");
         }
-        public static bool SalarioEhValido(string? input)
+        public static bool SalarioEhValido(string? input, out double salario)
         {
-            return double.TryParse(input, CultureInfo.InvariantCulture, out double preco) && preco >= 1500;
+            return double.TryParse(input, CultureInfo.InvariantCulture, out salario) && salario >= 1500;
         }
         public static bool ImpostoEhValido(string? input)
         {
