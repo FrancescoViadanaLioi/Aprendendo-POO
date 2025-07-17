@@ -42,11 +42,11 @@ namespace FuncionarioInput
     }
     public static class AjusteSalarial
     {
-        public static double AjustarSalario()
+        public static int AjustarSalario()
         {
             while (true)
             {
-                string? input = UniversalResources.ExibirRequisicao("Digite a porcentagem para o ajuste de salário do funcionário:  ");
+                string? input = UniversalResources.ExibirRequisicao("Digite a porcentagem para o ajuste de salário do funcionário (se for reduzir, digite um número inteiro negativo):  ");
                 bool sucesso = Validations.PorcentagemEhValida(input, out int porcentagem);
                 if (sucesso) return porcentagem;
                 ConsoleUI.ExibirErro("ERRO! Verifique se há um número inteiro como porcentagem (exs: 10%, 15%, 37%).");
