@@ -12,10 +12,10 @@ namespace Funcionario
         {
             return salarioBruto - imposto;
         }
-        public double AjusteDeSalario(double salarioBruto, double porcentagem, double imposto)
+        public double AjusteDeSalario (double salarioBruto, int porcentagem, double imposto)
         {
-            double novoSalarioBruto = salarioBruto + (salarioBruto * porcentagem / 100);
-            return novoSalarioBruto - imposto;
+            double salarioNovo = salarioBruto + salarioBruto * porcentagem / 100;
+            return salarioNovo - imposto;
         }
     }
 }
