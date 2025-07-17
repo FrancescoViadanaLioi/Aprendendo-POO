@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Funcionario;
 using Validacoes;
 using RecursosUniversais;
 using Miscelania;
@@ -36,6 +37,19 @@ namespace FuncionarioInput
                 bool sucesso = Validations.ImpostoEhValido(input, out double imposto);
                 if (sucesso) return imposto;
                 ConsoleUI.ExibirErro("ERRO! Verifique se o imposto sobre aquele funcionário é um valor válido (o imposto deve ser no mínimo de R$0.00)");
+            }
+        }
+    }
+    public static class AjusteSalarial
+    {
+        public static double AjustarSalario()
+        {
+            while (true)
+            {
+                string? input = UniversalResources.ExibirRequisicao("Digite a porcentagem para o ajuste de salário do funcionário:  ");
+                bool sucesso = Validations.PorcentagemEhValida(input, out int porcentagem);
+                if (sucesso) return porcentagem;
+                ConsoleUI.ExibirErro("ERRO! Verifique se há um número inteiro como porcentagem (exs: 10%, 15%, 37%).");
             }
         }
     }
