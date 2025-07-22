@@ -17,4 +17,11 @@ namespace Miscelania
             return Console.ReadLine();
         }
     }
+    public static class Formatador
+    {
+        public static string? FormatarCasaDecimal(double numero)
+        {
+            return numero.ToString("F2", CultureInfo.InvariantCulture);
+        }
+    }
 }
