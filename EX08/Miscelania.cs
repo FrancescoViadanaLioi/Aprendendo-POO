@@ -24,7 +24,7 @@ namespace Miscelania
     }
     public static class Formatador
     {
-        public static string? FormatarCasaDecimal(double numero)
+        public static string? Formatar(double numero)
         {
             return numero.ToString("F2", CultureInfo.InvariantCulture);
         }
