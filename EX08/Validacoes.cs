@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Validations
 {
@@ -6,7 +7,9 @@ namespace Validations
     {
         public static bool ValidarDecimal(string? input, out double num)
         {
-            return double.TryParse(input, out num) && num >= 1;
+            num = 0;
+            if (string.IsNullOrWhiteSpace(input)) return false;
+            return double.TryParse(input,NumberStyles.Float, CultureInfo.InvariantCulture ,out num) && num >= 0;
         }
     }
 }
