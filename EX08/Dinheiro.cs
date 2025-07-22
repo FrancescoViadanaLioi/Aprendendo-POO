@@ -10,6 +10,10 @@ namespace Dinheiro
 
         public double ConverterDolar()
         {
+            return Aporte / CotacaoDolar;
+        }
+        public double ReaisNecessarios()
+        {
             return Aporte * CotacaoDolar;
         }
     }
