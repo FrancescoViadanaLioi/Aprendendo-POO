@@ -8,9 +8,9 @@ namespace Dinheiro
         public double Aporte { get; set; }
         public double CotacaoDolar { get; set; }
 
-        public double ConverterDolar(double cotDolar)
+        public double ConverterDolar()
         {
-            return Aporte * cotDolar;
+            return Aporte * CotacaoDolar;
         }
     }
 }
