@@ -5,6 +5,11 @@ namespace Miscelania
 {
     public static class ConsoleUI
     {
+        public static void ExibirMensagemEncerrarPrograma(string msg)
+        {
+            Console.WriteLine(msg);
+            PressAnyKey();
+        }
         public static void ExibirErroELimpar(string msgErro)
         {
             Console.WriteLine($"ERRO! {msgErro}");
