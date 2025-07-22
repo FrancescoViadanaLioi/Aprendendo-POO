@@ -6,7 +6,7 @@ namespace Validations
     {
         public static bool ValidarDecimal(string? input, double num)
         {
-            return double.TryParse(input, out num);
+            return double.TryParse(input, out num) && num >= 1;
         }
     }
 }
