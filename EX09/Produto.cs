@@ -8,7 +8,7 @@ namespace ProdutoInfo
         public double Preco { get; set; }
         public int Quantidade { get; set; }
 
-        public Produto(string? nome, double preco, int quantidade)
+        public Produto(string nome, double preco, int quantidade)
         {
             Nome = nome;
             Preco = preco;
