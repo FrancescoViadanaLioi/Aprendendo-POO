@@ -14,9 +14,9 @@ namespace ProdutoInfo
             Preco = preco;
             Quantidade = quantidade;
         }
-        public static int AlterarEstoque(int quantidade, int variacao)
+        public void AlterarEstoque(int variacao)
         {
-            return quantidade + variacao;
+            Quantidade += variacao;
         }
     }
 }
