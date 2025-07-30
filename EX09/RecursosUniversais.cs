@@ -6,7 +6,7 @@ namespace UniversalResources
     {
         public static string? ExibirRequisicao(string texto)
         {
-            Console.WriteLine(texto);
+            Console.Write(texto);
             return Console.ReadLine();
         }
     }
