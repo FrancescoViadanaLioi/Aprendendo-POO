@@ -18,5 +18,9 @@ namespace ProdutoInfo
         {
             Quantidade += variacao;
         }
+        public double ValorTotal()
+        {
+            return Quantidade * Preco;
+        }
     }
 }

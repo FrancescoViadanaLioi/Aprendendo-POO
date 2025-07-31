@@ -7,7 +7,7 @@ namespace Miscelania
     {
         public static void ExibirErro(string msgErro)
         {
-            ExibirMensagem(msgErro);
+            ExibirMensagem($"ERRO! {msgErro}");
             Console.Clear();
         }
         public static void ExibirMensagem(string msg)
