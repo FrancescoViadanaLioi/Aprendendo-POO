@@ -8,7 +8,7 @@ namespace Validations
     {
         public static bool ValidarNome(string? input)
         {
-            return !string.IsNullOrWhiteSpace(input) && Regex.IsMatch(input, @"^[A-Za-zÀ-ÿ\s]+$");
+            return !string.IsNullOrWhiteSpace(input) && Regex.IsMatch(input, @"^[A-Za-zÀ-ÿ\s]+$") && input.Length > 1;
         }
         public static bool ValidarPreco(string? input, out double preco)
         {
