@@ -5,14 +5,23 @@ namespace Miscelania
 {
     public static class ConsoleUI
     {
-        public static void Exibir(Mensagem mensagem)
+        public static void ExibirAlerta(string conteudo)
+            => Exibir(MensagemFactory.Alerta(conteudo));
+        public static void ExibirErro(string conteudo)
+            => Exibir(MensagemFactory.Erro(conteudo));
+        public static void ExibirInformacao(string conteudo)
+            => Exibir(MensagemFactory.Informacao(conteudo));
+        public static void ExibirSucesso(string conteudo)
+            => Exibir(MensagemFactory.Sucesso(conteudo));
+
+        private static void Exibir(Mensagem mensagem)
         {
-            var CorOriginal = Console.ForegroundColor;
+            var corOriginal = Console.ForegroundColor;
             Console.ForegroundColor = Colorir(mensagem.Tipo);
             string prefixo = $"{mensagem.Tipo.ToString().ToUpper()}!";
             Console.WriteLine($"{prefixo} {mensagem.Conteudo}");
 
-            Console.ForegroundColor = CorOriginal;
+            Console.ForegroundColor = corOriginal;
 
             if (mensagem.EsperarTecla)
             {
