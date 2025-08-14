@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Miscelania;
 using UniversalResources;
-using Miscelania;
 using Validacoes;
 
 namespace Vetor.Input
@@ -23,13 +22,13 @@ namespace Vetor.Input
             {
                 while (true)
                 {
-                    string? input = Requisicao.PedirEntrada($"Qual o valor do elemento {i}: ");
-                    if (ValidacoesDeDados.ValidarElemento(input!))
+                    string? input = Requisicao.PedirEntrada($"Digite a altura da pessoa {i}: ");
+                    if (ValidacoesDeDados.ValidarAltura(input!))
                     {
                         vector[i] = double.Parse(input!);
                         break;
                     }
-                    ConsoleUI.ExibirErro("Verifique se o elemento do vetor é um número inteiro.");
+                    ConsoleUI.ExibirErro("Verifique se a altura da pessoa é um número maior .");
                 }
             }
             return vector;
