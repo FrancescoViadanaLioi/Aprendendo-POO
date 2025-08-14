@@ -16,9 +16,9 @@ namespace Vetor.Input
                 ConsoleUI.ExibirErro("Verifique se o tamanho inserido é um valor positivo maior do que zero.");
             }
         }
-        public static int[] PedirValores(int n)
+        public static double[] PedirValores(int n)
         {
-            int[] vector = new int[n];
+            double[] vector = new double[n];
             for (int i = 0; i < n; i++)
             {
                 while (true)
@@ -26,7 +26,7 @@ namespace Vetor.Input
                     string? input = Requisicao.PedirEntrada($"Qual o valor do elemento {i}: ");
                     if (ValidacoesDeDados.ValidarElemento(input!))
                     {
-                        vector[i] = int.Parse(input!);
+                        vector[i] = double.Parse(input!);
                         break;
                     }
                     ConsoleUI.ExibirErro("Verifique se o elemento do vetor é um número inteiro.");
