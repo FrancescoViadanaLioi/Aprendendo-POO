@@ -1,4 +1,6 @@
-﻿using Miscelania;
+﻿using System;
+using System.Globalization;
+using Miscelania;
 using UniversalResources;
 using Validacoes;
 
@@ -25,7 +27,7 @@ namespace Vetor.Input
                     string? input = Requisicao.PedirEntrada($"Digite a altura da pessoa {i+1}: ");
                     if (ValidacoesDeDados.ValidarAltura(input!))
                     {
-                        vector[i] = double.Parse(input!);
+                        vector[i] = double.Parse(input!, CultureInfo.InvariantCulture);
                         break;
                     }
                     ConsoleUI.ExibirErro("Verifique se a altura da pessoa é um número maior que 1.20 e menor que 2.40.");
