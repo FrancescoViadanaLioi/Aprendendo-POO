@@ -11,7 +11,7 @@ namespace Validacoes
         }
         public static bool ValidarAltura(string input)
         {
-            return double.TryParse(input, out double altura) && (altura >= 1.20 && altura <= 2.40);
+            return double.TryParse(input, CultureInfo.InvariantCulture ,out double altura) && (altura >= 1.20 && altura <= 2.40);
         }
     }
 }
