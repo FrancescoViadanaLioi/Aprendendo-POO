@@ -11,8 +11,7 @@ class Program
         int tamanho = EntradaDoUsuario.PedirTamanhoVetor();
         ConsoleUI.ExibirSucesso("Tamanho registrado com sucesso!");
 
-        double[] vetor = new double[tamanho];
-        vetor = EntradaDoUsuario.PedirValores(tamanho);
+        double[] vetor = EntradaDoUsuario.PedirValores(tamanho);
         ConsoleUI.ExibirSucesso("Alturas registradas com sucesso!");
 
         ConsoleUI.ExibirAlerta("AS ALTURAS DAS PESSOAS SERÃO INSERIDOS ABAIXO:");

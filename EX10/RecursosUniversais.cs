@@ -8,7 +8,8 @@ namespace UniversalResources
         public static string? PedirEntrada(string requisicao)
         {
             Console.Write(requisicao);
-            return Console.ReadLine()!;
+            string input = Console.ReadLine()!;
+            return input.ToString();
         }
     }
     public static class FormatadorDecimal
