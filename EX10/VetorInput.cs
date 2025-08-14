@@ -22,13 +22,13 @@ namespace Vetor.Input
             {
                 while (true)
                 {
-                    string? input = Requisicao.PedirEntrada($"Digite a altura da pessoa {i}: ");
+                    string? input = Requisicao.PedirEntrada($"Digite a altura da pessoa {i+1}: ");
                     if (ValidacoesDeDados.ValidarAltura(input!))
                     {
                         vector[i] = double.Parse(input!);
                         break;
                     }
-                    ConsoleUI.ExibirErro("Verifique se a altura da pessoa é um número maior .");
+                    ConsoleUI.ExibirErro("Verifique se a altura da pessoa é um número maior que 1.20 e menor que 2.40.");
                 }
             }
             return vector;
