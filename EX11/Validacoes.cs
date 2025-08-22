@@ -26,5 +26,9 @@ namespace Validations
             }
             return false;
         }
+        public static bool ValidarQuantidade(string input, out int quantidade)
+        {
+            return int.TryParse(input, out quantidade) && quantidade > 0;
+        }
     }
 }
