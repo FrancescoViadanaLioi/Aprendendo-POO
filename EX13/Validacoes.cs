@@ -22,5 +22,9 @@ namespace Validations
         {
             return double.TryParse(salario, CultureInfo.InvariantCulture, out salarioValidado) && salarioValidado > 1500;
         }
+        public static bool ValidarNumeroDeFuncionarios(string input, out int numeroDeFuncionarios)
+        {
+            return int.TryParse(input, out numeroDeFuncionarios) && numeroDeFuncionarios > 0;
+        }
     }
 }
