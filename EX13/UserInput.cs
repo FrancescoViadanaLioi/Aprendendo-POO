@@ -43,5 +43,37 @@ namespace Employee.Input
                 ConsoleUI.ExibirErro("Verifique se você digitou um número positivo inteiro.");
             }
         }
+        public static Funcionario LerIdDigitado(List<Funcionario> lista)
+        {
+            while (true)
+            {
+                string? procID = RequisicaoDeDados.PedirEntrada(
+                    "Qual o ID do funcionário que terá alteração salarial? "
+                );
+
+                if (string.IsNullOrWhiteSpace(procID))
+                {
+                    ConsoleUI.ExibirErro("O ID não pode estar vazio.");
+                    continue;
+                }
+                var func = lista.Find(x => x.ID == procID);
+
+                if (func != null)
+                {
+                    return func;
+                }
+                ConsoleUI.ExibirErro("Verifique se esse ID existe.");
+            }
+        }
+
+        public static double EntrarComPorcentagem()
+        {
+            while (true)
+            {
+                string? pctg = RequisicaoDeDados.PedirEntrada("Qual a porcentagem de alteração salarial (apenas números inteiros)? ");
+                if (pctg != null && Validacoes.ValidarPorcentagem(pctg, out double porcentagemValidada)) return porcentagemValidada;
+                ConsoleUI.ExibirErro("Verifique se a porcentagem é um número inteiro diferente de 0.");
+            }
+        }
     }
 }

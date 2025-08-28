@@ -26,5 +26,9 @@ namespace Validations
         {
             return int.TryParse(input, out numeroDeFuncionarios) && numeroDeFuncionarios > 0;
         }
+        public static bool ValidarPorcentagem(string input, out double porcentagem)
+        {
+            return double.TryParse(input, out porcentagem) && porcentagem != 0;
+        }
     }
 }
