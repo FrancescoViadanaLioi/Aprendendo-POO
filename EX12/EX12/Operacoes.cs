@@ -4,14 +4,10 @@ namespace Operations
 {
     internal class Operacoes
     {
-        public static int Sum(params int[] nums)
+        public static int TriplicarValor (int x, out int resultado)
         {
-            int soma = 0;
-            foreach (int valor in nums)
-            {
-                soma += valor;
-            }
-            return soma;
+            resultado = x * 3;
+            return resultado;
         }
     }
 }

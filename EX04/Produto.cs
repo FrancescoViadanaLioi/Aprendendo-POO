@@ -2,7 +2,7 @@
 
 namespace Produto
 {
-    public class Produto
+    public class Product
     {
         public string? Nome;
         public double Preco;

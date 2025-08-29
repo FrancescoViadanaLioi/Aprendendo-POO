@@ -10,7 +10,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var produto = new Produto.Produto();
+        var produto = new Product();
         produto.Nome = Registrador.RegistrarNome();
         produto.Preco = Registrador.RegistrarPreco();
         produto.Qntd = Registrador.RegistrarQuantidadeInicial();
