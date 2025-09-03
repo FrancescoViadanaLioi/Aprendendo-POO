@@ -5,13 +5,9 @@ namespace EX16.Entities
 {
     internal class Department
     {
-        public AvailabeDepartments Name{ get; set; }
+        public AvailableDepartments Name{ get; set; }
 
-        public Department()
-        {
-        }
-
-        public Department(AvailabeDepartments name)
+        public Department(AvailableDepartments name)
         {
             Name = name;
         }

@@ -2,7 +2,7 @@
 
 namespace EX16.Entities.EntitiesEnum
 {
-    enum AvailabeDepartments : int
+    enum AvailableDepartments : int
     { 
         IT = 0,
         HR = 1,
