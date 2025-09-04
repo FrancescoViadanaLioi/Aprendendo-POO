@@ -11,5 +11,6 @@ namespace EX16.Entities
         {
             Name = name;
         }
+        public Department() { }
     }
 }
