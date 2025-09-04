@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace EX16.View.Resources
 {
-    internal static class UniversalResources
+    internal static class DataInput
     {
         public static string? AskForInput(string text)
         {
