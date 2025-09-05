@@ -17,9 +17,9 @@ namespace EX16.Services
         {
             return Enum.TryParse(input, ignoreCase: true, out level) && Enum.IsDefined(typeof(WorkerLevel), level);
         }
-        public static bool ValidateBaseSalary(string input, out double salary)
+        public static bool ValidateDoubleInput(string input, out double num)
         {
-            return double.TryParse(input, CultureInfo.InvariantCulture, out salary) && salary > 0;
+            return double.TryParse(input, CultureInfo.InvariantCulture, out num) && num > 0;
         }
         public static bool ValidateBaseSalary(double salary)
         {
@@ -29,9 +29,9 @@ namespace EX16.Services
         {
             return Enum.TryParse(input, ignoreCase: true, out department) && Enum.IsDefined(typeof(AvailableDepartments), department);
         }
-        public static bool ValidateContracts(string input, out int contracts)
+        public static bool ValidateIntegerInput(string input, out int num)
         {
-            return int.TryParse(input, out contracts) && contracts > 0;
+            return int.TryParse(input, out num) && num > 0;
         }
     }
 }
