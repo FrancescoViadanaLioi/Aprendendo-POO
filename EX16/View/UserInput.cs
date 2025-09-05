@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using EX16.Services;
 using EX16.Entities.EntitiesEnum;
 using EX16.View.Resources;
@@ -59,7 +60,7 @@ namespace EX16.View
             while (true)
             {
                 string? input = DataInput.AskForInput("Type the date of the contract (dd/MM/yyyy format): ");
-                if (DateTime.TryParse(input, out DateTime date)) return date;
+                if (DateTime.TryParseExact(input, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None ,out DateTime date)) return date;
                 ConsoleUI.ShowError("Verify if the date is valid.");
             }
         }
