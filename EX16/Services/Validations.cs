@@ -36,22 +36,14 @@ namespace EX16.Services
         public static bool ValidateMonthYear(string input, out string formatted)
         {
             formatted = string.Empty;
+            if (string.IsNullOrWhiteSpace(input)) return false;
 
-            if (string.IsNullOrWhiteSpace(input))
-                return false;
+            if (!DateTime.TryParseExact(input, "MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date)) return false;
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(input, @"^(0[1-9]|1[0-2])/([0-9]{4})$"))
-                return false;
+            if (date.Year < DateTime.MinValue.Year || date.Year > DateTime.Now.Year) return false;
 
-            int year = int.Parse(input.Substring(3, 4));
-
-            if (year < DateTime.MinValue.Year || year > DateTime.Now.Year)
-                return false;
-
-            formatted = input;
+            formatted = date.ToString("MM/yyyy");
             return true;
         }
-
-
     }
 }
