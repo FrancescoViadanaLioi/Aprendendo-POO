@@ -45,7 +45,7 @@ namespace EX16.Services
 
             int year = int.Parse(input.Substring(3, 4));
 
-            if (year < 1 || year > DateTime.Now.Year)
+            if (year < DateTime.MinValue.Year || year > DateTime.Now.Year)
                 return false;
 
             formatted = input;
