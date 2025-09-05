@@ -11,7 +11,7 @@ namespace EX16.Services
     {
         public static bool ValidateName(string input)
         {
-            return string.IsNullOrWhiteSpace(input) && Regex.IsMatch(input, @"^[\p{L}]+(?:[ '-][\p{L}]+)*$");
+            return !string.IsNullOrWhiteSpace(input) && Regex.IsMatch(input, @"^[\p{L}]+(?:[ '-][\p{L}]+)*$");
         }
         public static bool ValidateLevel(string input, out WorkerLevel level)
         {
@@ -33,5 +33,25 @@ namespace EX16.Services
         {
             return int.TryParse(input, out num) && num > 0;
         }
+        public static bool ValidateMonthYear(string input, out string formatted)
+        {
+            formatted = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(input, @"^(0[1-9]|1[0-2])/([0-9]{4})$"))
+                return false;
+
+            int year = int.Parse(input.Substring(3, 4));
+
+            if (year < 1 || year > DateTime.Now.Year)
+                return false;
+
+            formatted = input;
+            return true;
+        }
+
+
     }
 }
