@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using System.Text;
 using EX17.Entities;
 
@@ -8,15 +9,15 @@ namespace EX17.Entities
     {
         public DateTime Moment { get; set; }
         public string Title { get; set; }
-        public string Text { get; set; }
+        public string Content { get; set; }
         public int Likes { get; set; }
         public List<Comment> Comments { get; set; } = new List<Comment>();
 
-        public Post(DateTime moment, string title, string text, int likes)
+        public Post(DateTime moment, string title, string content, int likes)
         {
             Moment = moment;
             Title = title;
-            Text = text;
+            Content = content;
             Likes = likes;
         }
         public void AddComment(Comment comment)
@@ -26,6 +27,21 @@ namespace EX17.Entities
         public void RemoveComment(Comment comment)
         {
             Comments.Remove(comment);
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Title);
+            sb.Append($"{Likes} Likes - ");
+            sb.AppendLine(Moment.ToString("dd/MM/yyyy HH:mm:ss"));
+            sb.AppendLine(Content);
+            sb.AppendLine("Comments:");
+
+            foreach (Comment c in Comments)
+            {
+                sb.AppendLine(c.Text);
+            }
+            return sb.ToString();
         }
     }
 }
