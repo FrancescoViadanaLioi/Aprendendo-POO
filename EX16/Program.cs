@@ -36,7 +36,7 @@ class Program
         int year = int.Parse(monthAndYear.Substring(3));
         Console.WriteLine($"Name: {worker.Name}");
         Console.WriteLine($"Department: {worker.Department.Name}");
-        Console.WriteLine($"Income for {monthAndYear}: {worker.Income(year, month)}");
+        Console.WriteLine($"Income for {monthAndYear}: {Formatter.Format(worker.Income(year, month))}");
         ConsoleUI.ShowInfo("End of program.");
     }
 }
