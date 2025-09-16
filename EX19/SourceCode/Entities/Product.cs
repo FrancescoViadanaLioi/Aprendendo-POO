@@ -18,7 +18,7 @@ namespace EX19.Entities
             Price = price;
         }
 
-        public string PriceTag()
+        public virtual string PriceTag()
         {
             return $"{Name}: ${Price.ToString("F2", CultureInfo.InvariantCulture)}";
         }
