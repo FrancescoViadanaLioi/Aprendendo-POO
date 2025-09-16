@@ -22,7 +22,7 @@ namespace EX19.Entities
         public override string PriceTag()
         {
             double totalPrice = TotalPrice();
-            return $"{Name} (imported): ${totalPrice.ToString("F2", CultureInfo.InvariantCulture)} (custom fee: ${CustomFee})";
+            return $"{Name} (imported): ${totalPrice.ToString("F2", CultureInfo.InvariantCulture)} (custom fee: ${CustomFee * 100}%)";
         }
     }
 }
