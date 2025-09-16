@@ -19,7 +19,7 @@ namespace EX18.Entities
             Holder = holder;
             Balance = balance;
         }
-        public void WithDraw(double amount)
+        public void Withdraw(double amount)
         {
             Balance -= amount;
         }
