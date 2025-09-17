@@ -8,7 +8,7 @@ using EX19.Controllers;
 
 namespace EX19.Services
 {
-    internal static class ProductValidatons
+    internal static class ProductValidations
     {
         public static bool IsValidName(string name)
         {
