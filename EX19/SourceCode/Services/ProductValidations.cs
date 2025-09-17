@@ -24,7 +24,7 @@ namespace EX19.Services
         {
             return double.TryParse(input, CultureInfo.InvariantCulture, out double price) && price > 0.00;
         }
-        public static bool ISCustomFeeValid(string input)
+        public static bool IsCustomFeeValid(string input)
         {
             return double.TryParse(input, CultureInfo.InvariantCulture, out double fee) && (fee >= 0.00 && fee <= 100);
         }
