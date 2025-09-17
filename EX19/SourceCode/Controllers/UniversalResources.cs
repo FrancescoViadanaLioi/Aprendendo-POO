@@ -35,7 +35,7 @@ namespace EX19.Controllers
             {
                 string? input = DataInput.AskForInput(prompt);
                 if (input != null && validator(input)) return converter(input);
-                ConsoleUI
+                ConsoleUI.ShowError(errorMessage);
             }
         }
     }
