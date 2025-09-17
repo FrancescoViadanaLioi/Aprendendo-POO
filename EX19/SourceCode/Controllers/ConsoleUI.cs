@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using EX19.Entities;
 using EX19.Entities.Enum;
 
-namespace EX19.View
+namespace EX19.Controllers
 {
     internal class ConsoleUI
     {
