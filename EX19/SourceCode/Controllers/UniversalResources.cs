@@ -15,6 +15,13 @@ namespace EX19.Controllers
             Console.Write(text);
             return Console.ReadLine();
         }
+        public static char? AskForCharInput(string text)
+        {
+            Console.Write(text);
+            string? input = Console.ReadLine()!;
+
+            return input[0];
+        }
     }
     internal static class Formatter
     {
