@@ -47,5 +47,14 @@ namespace EX19.View
                 "Verify if the date is in the dd/MMMM/yyyy format.");
             return manufactureDate;
         }
+        public static int QuantityInput()
+        {
+            int quantity = InputHelper.GetValidatedInput(
+                "Type how many products will be bought: ",
+                input => ProductValidations.IsQuantityValid(input),
+                input => int.Parse(input),
+                "The quantity must be an integer positive number.");
+            return quantity;
+        }
     }
 }
