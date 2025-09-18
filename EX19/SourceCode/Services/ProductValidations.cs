@@ -32,5 +32,9 @@ namespace EX19.Services
         {
             return DateTime.TryParseExact(input, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None , out DateTime formattedDate) && formattedDate > DateTime.MinValue;
         }
+        public static bool IsQuantityValid(string input)
+        {
+            return int.TryParse(input, out int quantity) && quantity > 0;
+        }
     }
 }
