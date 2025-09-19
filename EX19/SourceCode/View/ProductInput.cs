@@ -23,7 +23,7 @@ namespace EX19.View
         public static double PriceInput()
         {
             double price = InputHelper.GetValidatedInput(
-                "Type the product's price: ",
+                "Type the product's price: $",
                 input => ProductValidations.IsValidPrice(input),
                 input => double.Parse(input),
                 "Verify if the price is higher than 0.");
@@ -33,7 +33,7 @@ namespace EX19.View
         {
             double customFee = InputHelper.GetValidatedInput(
                 "Type the product's custom fee (in percentage, which is between 0% and 99.9%): ",
-                input => ProductValidations.IsDateValid(input),
+                input => ProductValidations.IsCustomFeeValid(input),
                 input => double.Parse(input),
                 "Verify if the custom fee is a percentage between 0% and 99.9%.");
             return customFee / 100;
