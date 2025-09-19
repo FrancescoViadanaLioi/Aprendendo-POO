@@ -23,7 +23,7 @@ namespace EX19.Entities
         public override string PriceTag()
         {
             double totalPrice = TotalPrice();
-            return $"{Name} (imported): ${Formatter.Format(totalPrice)} (custom fee: ${Formatter.Format(CustomFee * Price)}%)";
+            return $"{Name} (imported): ${Formatter.Format(totalPrice)} (custom fee: ${Formatter.Format(CustomFee * Price)})";
         }
     }
 }
