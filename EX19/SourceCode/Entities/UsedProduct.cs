@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using EX19.Controllers;
 
 namespace EX19.Entities
 {
@@ -17,7 +18,7 @@ namespace EX19.Entities
         }
         public override string PriceTag()
         {
-            return $"{Name} (used): ${Price.ToString("F2", CultureInfo.InvariantCulture)} (Manufacture Date: {ManufactureDate.ToString("dd/MM/yyyy")}";
+            return $"{Name} (used): ${Formatter.Format(Price)} (Manufacture Date: {ManufactureDate.ToString("dd/MM/yyyy")}";
         }
     }
 }
