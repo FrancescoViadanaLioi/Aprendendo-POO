@@ -38,7 +38,7 @@ namespace EX19.View
                 "Verify if the custom fee is a percentage between 0% and 99.9%.");
             return customFee / 100;
         }
-        public static DateTime ManufactureDate()
+        public static DateTime ManufactureDateInput()
         {
             DateTime manufactureDate = InputHelper.GetValidatedInput(
                 "Type the product's Manufacture date (dd/MM/yyyy format): ",
