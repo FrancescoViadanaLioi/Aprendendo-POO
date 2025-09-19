@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using EX19.Controllers;
 
 namespace EX19.Entities
 {
@@ -22,7 +23,7 @@ namespace EX19.Entities
         public override string PriceTag()
         {
             double totalPrice = TotalPrice();
-            return $"{Name} (imported): ${totalPrice.ToString("F2", CultureInfo.InvariantCulture)} (custom fee: ${CustomFee * 100}%)";
+            return $"{Name} (imported): ${Formatter.Format(totalPrice)} (custom fee: ${Formatter.Format(CustomFee * Price)}%)";
         }
     }
 }
