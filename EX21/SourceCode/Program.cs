@@ -5,8 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Kriptonian superman = new Kriptonian("Superman");
-
+        Kriptonian superman = new Kriptonian("Superman", "Clark Kent");
+        superman.SuperStrength();
+        superman.Flight();
         superman.SuperSpeed();
+        superman.ShowSecretIdentity();
+
+        Kriptonian zod = new Kriptonian("General Zod");
+        zod.ShowSecretIdentity();
+
     }
 }
