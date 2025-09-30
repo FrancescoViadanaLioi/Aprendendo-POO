@@ -6,7 +6,7 @@ namespace EX21.Entities
     internal class Kriptonian: IPowers
     {
         public string Name { get; private set; }
-        public string SecretIdentity { get; private set; }
+        public string? SecretIdentity { get; private set; } = null;
 
         public Kriptonian(string name, string secretIdentity)
         {
