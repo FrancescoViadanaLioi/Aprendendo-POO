@@ -12,9 +12,8 @@ namespace EX21.Entities
         {
             Name = name;
         }
-        public Kriptonian(string name, string secretIdentity)
+        public Kriptonian(string name, string secretIdentity): this(name)
         {
-            Name = name;
             SecretIdentity = secretIdentity;
         }
 
