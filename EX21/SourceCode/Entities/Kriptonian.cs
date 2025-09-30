@@ -8,6 +8,10 @@ namespace EX21.Entities
         public string Name { get; private set; }
         public string? SecretIdentity { get; private set; } = null;
 
+        public Kriptonian(string name)
+        {
+            Name = name;
+        }
         public Kriptonian(string name, string secretIdentity)
         {
             Name = name;
