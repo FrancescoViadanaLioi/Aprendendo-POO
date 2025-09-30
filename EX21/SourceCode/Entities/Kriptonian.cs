@@ -6,15 +6,16 @@ namespace EX21.Entities
     internal class Kriptonian : IPowers
     {
         public string Name { get; private set; }
-        public string? SecretIdentity { get; private set; }
+        public SecretIdentity SecretIdentity { get; private set; }
 
         public Kriptonian(string name)
         {
             Name = name;
+            SecretIdentity = new SecretIdentity(null!);
         }
         public Kriptonian(string name, string secretIdentity) : this(name)
         {
-            SecretIdentity = secretIdentity;
+            SecretIdentity = new SecretIdentity(secretIdentity);
         }
 
         public void HeatVision() => Activate("Heat Vision");
@@ -23,6 +24,7 @@ namespace EX21.Entities
         public void SuperStrength() => Activate("Super strength");
         public void XRayVision() => Activate("X-Ray Vision");
         public void SuperSpeed() => Console.WriteLine($"Faster than a speeding bullet: it's {Name}!");
+        public void ShowSecretIdentity() => Console.WriteLine($"{Name} secret identity: {SecretIdentity}");
 
         private void Activate(string power) => Console.WriteLine($"{Name} is using {power}!");
     }
