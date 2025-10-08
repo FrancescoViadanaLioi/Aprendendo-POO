@@ -1,5 +1,6 @@
 ﻿using EX22.Entities;
 using EX22.Services;
+using EX22.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,13 @@ namespace EX22.Services
     {
         public double PricePerHour { get; private set; }
         public double PricePerDay { get; private set; }
-        private BrazilTaxService _brazilTaxService { get; set; } = new BrazilTaxService();
+        private ITaxService _taxService;
 
-        public RentalService(double pricePerHour, double pricePerDay)
+        public RentalService(double pricePerHour, double pricePerDay, ITaxService taxService)
         {
             PricePerHour = pricePerHour;
             PricePerDay = pricePerDay;
+            _taxService = taxService;
         }
 
         public void ProcessInvoice(CarRental carRental)
@@ -29,7 +31,7 @@ namespace EX22.Services
             if (duration.TotalHours <= 12) basicPayment = PricePerHour * Math.Ceiling(duration.TotalHours);
             else basicPayment = PricePerDay * Math.Ceiling(duration.TotalDays);
 
-            double tax = _brazilTaxService.Tax(basicPayment);
+            double tax = _taxService.Tax(basicPayment);
 
             carRental.Invoice = new Invoice(basicPayment, tax);
         }

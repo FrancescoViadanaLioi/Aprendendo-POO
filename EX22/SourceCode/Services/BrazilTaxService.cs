@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EX22.Services.Interfaces;
 
 namespace EX22.Services
 {
-    internal class BrazilTaxService
+    internal class BrazilTaxService: ITaxService
     {
         public double Tax(double amount)
         {
