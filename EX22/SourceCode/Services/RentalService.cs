@@ -1,0 +1,37 @@
+﻿using EX22.Entities;
+using EX22.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EX22.Services
+{
+    internal class RentalService
+    {
+        public double PricePerHour { get; private set; }
+        public double PricePerDay { get; private set; }
+        private BrazilTaxService _brazilTaxService { get; set; } = new BrazilTaxService();
+
+        public RentalService(double pricePerHour, double pricePerDay)
+        {
+            PricePerHour = pricePerHour;
+            PricePerDay = pricePerDay;
+        }
+
+        public void ProcessInvoice(CarRental carRental)
+        {
+            TimeSpan duration = carRental.End - carRental.Start;
+
+            double basicPayment = 0.0;
+
+            if (duration.TotalHours <= 12) basicPayment = PricePerHour * Math.Ceiling(duration.TotalHours);
+            else basicPayment = PricePerDay * Math.Ceiling(duration.TotalDays);
+
+            double tax = _brazilTaxService.Tax(basicPayment);
+
+            carRental.Invoice = new Invoice(basicPayment, tax);
+        }
+    }
+}
