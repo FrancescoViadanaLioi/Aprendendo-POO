@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EX21.Entities
 {
-    internal class SecretIdentity
+    internal class SecretIdentity //Class that check if the character has a secret identity
     {
         public string? Name { get; }
         public bool Exists => !string.IsNullOrWhiteSpace(Name);

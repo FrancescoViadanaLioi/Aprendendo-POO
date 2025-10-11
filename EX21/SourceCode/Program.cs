@@ -3,7 +3,7 @@ using EX21.Entities.Interfaces;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] args) //Thx for watching! :)
     {
         Kriptonian superman = new Kriptonian("Superman", "Clark Kent");
         superman.SuperStrength();
