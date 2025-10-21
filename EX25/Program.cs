@@ -8,12 +8,12 @@ class Program
         Console.Write("How many values will you put in the list (limit is 10 values)? ");
         int vectorSize = int.Parse(Console.ReadLine()!);
 
-        PrintService printService = new PrintService();
+        PrintService<string> printService = new PrintService<string>();
 
         for (int i = 0; i < vectorSize; i++)
         {
             Console.Write($"Value in the position [{i}]: ");
-            int value = int.Parse(Console.ReadLine()!);
+            string value = Console.ReadLine()!;
             printService.AddValue(value);
         }
 
